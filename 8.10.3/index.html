@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="#">
         <label>
@@ -12,13 +14,14 @@
             <input id="text" type="text" placeholder="Введите текст">
         </label>
         <button id="submit" type="submit">Нажми меня</button>
-    </form>  
+    </form>
 
     <script>
-        document.querySelector("input").addEventListener("input", () => {
-        console.log(document.querySelector("#text").value);
+        document.querySelector("form").addEventListener("click", (event) => {
+            ((event.target.tagName == "BUTTON") || (event.target.tagName == "INPUT")) ? event.preventDefault() : alert("Здесь ничего нет, нажмите, пожалуйста, на кнопку или заполните поле ввода");
         });
     </script>
 
 </body>
+
 </html>
